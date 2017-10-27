@@ -37,10 +37,8 @@ BU_: XXX
 
 
 BO_ 883 NEW_MSG_1: 8 XXX
- SG_ NEW_SIGNAL_1 : 24|3@1+ (1,0) [0|7] "" XXX
 
 BO_ 281 NEW_MSG_2: 8 XXX
- SG_ NEW_SIGNAL_1 : 44|21@0+ (1,0) [0|2097151] "" XXX
 
 BO_ 1761 battery_cell_0: 8 XXX
 
@@ -52,3 +50,20 @@ BO_ 1764 battery_cell_3: 8 XXX
 
 BO_ 520 brake_pedal: 8 XXX
  SG_ brake_pedal_position : 23|16@0+ (1,0) [0|65535] "" XXX
+
+BO_ 561 brake_pedal: 8 XXX
+ SG_ brake_pedal_switch : 39|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 1042 speed_odometer: 8 XXX
+ SG_ speed_in_kph : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ odometer : 23|24@0+ (1,0) [0|16777215] "" XXX
+
+BO_ 645 gearbox: 8 XXX
+ SG_ gearbox_position : 7|64@0+ (1,0) [0|18446744073709552000] "" XXX
+
+BO_ 257 key_position: 8 XXX
+ SG_ key_position : 7|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 666 vin_number: 8 XXX
+
+BO_ 1786 vin_number: 8 XXX
