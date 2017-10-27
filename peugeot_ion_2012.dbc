@@ -36,13 +36,19 @@ BS_:
 BU_: XXX
 
 
-BO_ 883 NEW_MSG_1: 8 XXX
+BO_ 883 battery: 8 XXX
+ SG_ battery_current : 23|16@0+ (1,0) [0|65535] "Amp" XXX
+ SG_ battery_voltage : 39|16@0+ (1,0) [0|65535] "Voltage" XXX
 
 BO_ 281 NEW_MSG_2: 8 XXX
 
 BO_ 1761 battery_cell_0: 8 XXX
- SG_ NEW_SIGNAL_1 : 23|8@0+ (1,0) [0|255] "" XXX
  SG_ index : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ temp_0 : 15|8@0+ (1,0) [0|255] "C" XXX
+ SG_ temp_1 : 23|8@0+ (1,0) [0|255] "C" XXX
+ SG_ temp_2 : 31|8@0+ (1,0) [0|255] "C" XXX
+ SG_ battery_voltage_1 : 55|16@0+ (1,0) [0|65535] "Volatge" XXX
+ SG_ battery_voltage_0 : 39|16@0+ (1,0) [0|65535] "Voltage" XXX
 
 BO_ 1762 battery_cell_1: 8 XXX
 
@@ -57,8 +63,8 @@ BO_ 561 brake_pedal: 8 XXX
  SG_ brake_pedal_switch : 39|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 1042 speed_odometer: 8 XXX
- SG_ speed_in_kph : 15|8@0+ (1,0) [0|255] "" XXX
- SG_ odometer : 23|24@0+ (1,0) [0|16777215] "" XXX
+ SG_ speed_in_kph : 15|8@0+ (1,-255) [0|255] "km/h" XXX
+ SG_ odometer : 23|24@0+ (1,0) [0|16777215] "miles" XXX
 
 BO_ 645 gearbox: 8 XXX
  SG_ gearbox_position : 7|64@0+ (1,0) [0|18446744073709552000] "" XXX
@@ -88,7 +94,22 @@ BO_ 664 motor_management: 8 XXX
 BO_ 646 charger: 8 XXX
  SG_ charger_temp : 31|8@0+ (1,-40) [0|255] "Celcius" XXX
 
+BO_ 884 battery: 8 XXX
+ SG_ battery_soc : 15|8@0+ (1,0) [0|255] "%" XXX
+
+BO_ 932 ac_heating: 8 XXX
 
 
 
+
+CM_ SG_ 883 battery_current "(b2 * 256 + b3 - 32768) / 100";
+CM_ SG_ 883 battery_voltage "(b4*256+b5) / 10";
+CM_ SG_ 1761 temp_0 "T= b1-50";
+CM_ SG_ 1761 temp_1 "T= b2-50";
+CM_ SG_ 1761 temp_2 "T= b3-50";
+CM_ SG_ 1761 battery_voltage_1 "BV=(b6*256+b7)/100";
+CM_ SG_ 1761 battery_voltage_0 "BV=(b4*256+b5)/100";
+CM_ SG_ 1042 speed_in_kph "b0 - 255";
+CM_ SG_ 1042 odometer "ODO=(b2*256+b3)*256+b4";
 CM_ SG_ 646 charger_temp "- 40";
+CM_ SG_ 884 battery_soc "(b1 - 10) / 2";
