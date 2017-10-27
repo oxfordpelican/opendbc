@@ -41,6 +41,8 @@ BO_ 883 NEW_MSG_1: 8 XXX
 BO_ 281 NEW_MSG_2: 8 XXX
 
 BO_ 1761 battery_cell_0: 8 XXX
+ SG_ NEW_SIGNAL_1 : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ index : 7|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 1762 battery_cell_1: 8 XXX
 
@@ -67,3 +69,26 @@ BO_ 257 key_position: 8 XXX
 BO_ 666 vin_number: 8 XXX
 
 BO_ 1786 vin_number: 8 XXX
+
+BO_ 1749 NEW_MSG_3: 8 XXX
+ SG_ NEW_SIGNAL_1 : 15|8@0+ (1,0) [0|255] "" XXX
+
+BO_ 1060 NEW_MSG_4: 8 XXX
+ SG_ index : 7|8@0+ (1,0) [0|255] "" XXX
+ SG_ temp0 : 15|8@0+ (1,0) [0|255] "" XXX
+ SG_ temp1 : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ temp2 : 31|8@0+ (1,0) [0|255] "" XXX
+ SG_ battery_voltage_0 : 39|16@0+ (1,0) [0|65535] "" XXX
+ SG_ battery_voltage_1 : 55|16@0+ (1,0) [0|65535] "" XXX
+
+BO_ 664 motor_management: 8 XXX
+ SG_ motor_rpm : 55|16@0+ (1,0) [0|65535] "" XXX
+ SG_ motor_temp : 31|8@0+ (1,-40) [0|255] "Celcius" XXX
+
+BO_ 646 charger: 8 XXX
+ SG_ charger_temp : 31|8@0+ (1,-40) [0|255] "Celcius" XXX
+
+
+
+
+CM_ SG_ 646 charger_temp "- 40";
